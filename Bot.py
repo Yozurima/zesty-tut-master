@@ -11,6 +11,7 @@ client = commands.Bot(command_prefix = "!")
 async def on_ready():
     print("Thankyou for Using this bot")
     await client.change_presece(game=discord.Game(name="League"))
+
 @client.event
 async def on_message(message):
     if message.content.startswith('!Hello')
@@ -19,4 +20,5 @@ async def on_message(message):
     if message.content.startswith('!bye')
         msg = 'Goodbye {o.author.mention} Hope To See You Again Soon :wave:'.format(message)
         await client.send_message(message.channel, msg)
+
 client.run(os.getenv('TOKEN'))
